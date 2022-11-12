@@ -1,0 +1,29 @@
+name: 'Wait for Commit Status'
+description: 'Wait for commit status state to be successful'
+inputs:
+  sha:
+    description: 'The sha of the commit to check status for'
+    required: true
+  token:
+    description: 'The Github token to use to check the commit status'
+    required: true
+  context:
+    description: 'The commit status context'
+    required: true
+  repository:
+    description: 'The OWNER/REPOSITORY of the commit to check status on'
+    required: true
+  repeat:
+    description: 'The amount of times to repeat the commit status check'
+    required: false
+    default: '20'
+  sleep:
+    description: 'The amount of seconds to sleep between checks'
+    required: false
+    default: '10'
+outputs:
+  time: # id of output
+    description: 'The time we greeted you'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
