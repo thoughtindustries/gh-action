@@ -21,9 +21,6 @@ inputs:
     description: 'The amount of seconds to sleep between checks'
     required: false
     default: '10'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
 runs:
   using: 'node16'
   main: 'dist/index.js'

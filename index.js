@@ -16,7 +16,7 @@ const httpClient = require('@actions/http-client');
         const url = `https://api.github.com/repos/${repository}/commits/${sha}/status`;
         console.log(`Hitting url ${url}\n`);
 
-        const client = new httpClient.HttpClient('thoughtindustries');
+        const client = new httpClient.HttpClient(repository);
         const response = await client.getJson(url, {
           [httpClient.Headers.Accept]: 'application/vnd.github.v3+json',
           Authorization: `Bearer ${token}`
